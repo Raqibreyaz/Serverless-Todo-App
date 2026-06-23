@@ -1,0 +1,6 @@
+issues:
+  issue: import { type APIGatewayProxyEventV2 } from "aws-lambda"; this line is causing lambda to fail, as lambda is running the compiled js and compiled js will not have @types/aws-lambda, throwing module not found
+  fix: actually the 'type' keyword would be outside the curly brace so that typescript can entirely omit the import as it is only importing types
+
+  issue: lambda function showing warning 'not all code path return a value'
+  fix: actually in catch block i was returning conditionally, which caused it to return nothing in else case, so return from else code also

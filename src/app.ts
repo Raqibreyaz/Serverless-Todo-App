@@ -1,5 +1,5 @@
 import connectDb, { createObjectId, isValidObjectId } from "./db.js";
-import { type APIGatewayProxyEventV2 } from "aws-lambda";
+import type { APIGatewayProxyEventV2 } from "aws-lambda";
 import { z } from "zod";
 
 const allowedHttpMethodSchema = z.enum(["GET", "POST", "PUT", "DELETE"]);
