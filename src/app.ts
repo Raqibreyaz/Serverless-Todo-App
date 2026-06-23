@@ -26,7 +26,7 @@ export const lambdaFunction = async (event: APIGatewayProxyEventV2) => {
     // conditionally connect to DB
     const Todo = await connectDb();
 
-    const todoId = path.split("/")[0];
+    const todoId = path.split("/")[1];
     const body: Body = bodySchema.parse(rawBody ? JSON.parse(rawBody) : {});
     const todoContent = body.content;
     const isTodoCompleted = body.isCompleted;
